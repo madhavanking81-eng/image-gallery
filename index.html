@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FlipFolio | Your Memories, One Page at a Time</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- HOME / BOOK COVER -->
+    <main id="homeSection" class="home-section">
+
+        <header class="topbar">
+            <a href="#" class="brand">Flip<span>Folio</span></a>
+            <p class="topbar-note">THE ART OF PRESERVING MEMORIES</p>
+        </header>
+
+        <section class="hero">
+
+            <div class="hero-copy">
+                <p class="eyebrow">YOUR PERSONAL PHOTO COLLECTION</p>
+
+                <h1>
+                    Every picture<br>
+                    tells a <span>story.</span>
+                </h1>
+
+                <p class="hero-description">
+                    Some memories deserve more than a screen.
+                    Open your book and relive the moments that matter.
+                </p>
+
+                <div class="gold-line"></div>
+
+                <p class="hero-caption">
+                    A little nostalgia. A little magic. A lifetime of memories.
+                </p>
+            </div>
+
+            <div class="book-stage">
+
+                <div class="book" id="photoBook">
+
+                    <!-- Pages visible behind the front cover -->
+                    <div class="book-pages-stack">
+                        <div class="paper-layer"></div>
+                        <div class="paper-layer"></div>
+                        <div class="paper-layer"></div>
+                    </div>
+
+                    <!-- Rotating front cover -->
+                    <div class="book-cover" id="bookCover">
+
+                        <!-- Outside of the cover -->
+                        <div class="cover-front">
+                            <div class="cover-border">
+
+                                <div class="cover-top-label">
+                                    EST. MMXXVI
+                                </div>
+
+                                <div class="cover-emblem">✦</div>
+
+                                <h2>FlipFolio</h2>
+
+                                <div class="cover-divider"></div>
+
+                                <p class="cover-subtitle">
+                                    YOUR MEMORIES<br>
+                                    ONE PAGE AT A TIME
+                                </p>
+
+                                <div class="cover-bottom">
+                                    A COLLECTION OF MOMENTS
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Inside of the cover -->
+                        <div class="cover-inside">
+                            <div class="inside-border">
+                                <span class="inside-emblem">✦</span>
+                                <p>Every memory has a place.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p class="book-hint">YOUR MEMORIES AWAIT</p>
+
+                <button type="button" id="openBookBtn" class="gold-button">
+                    <span>OPEN YOUR BOOK</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+        <footer class="home-footer">
+            MADE WITH LOVE · DESIGNED TO REMEMBER
+        </footer>
+
+    </main>
+
+
+    <!-- PHOTO GALLERY -->
+    <section id="gallerySection" class="gallery-section" hidden>
+
+        <header class="gallery-header">
+            <a href="#" class="brand gallery-brand">
+                Flip<span>Folio</span>
+            </a>
+
+            <p class="gallery-tagline">A COLLECTION OF BEAUTIFUL MOMENTS</p>
+
+            <button type="button" id="closeGalleryBtn" class="back-button">
+                <span>←</span> Back to Book
+            </button>
+        </header>
+
+        <div class="gallery-intro">
+            <p class="eyebrow">TURN THE PAGE</p>
+            <h1>Your memories, <span>beautifully kept.</span></h1>
+            <p>Explore the world one photograph at a time.</p>
+        </div>
+
+        <!-- Category filters -->
+        <nav class="category-bar" aria-label="Photo categories">
+            <button type="button" class="category-button active" data-category="All">
+                All Photos
+            </button>
+
+            <button type="button" class="category-button" data-category="Nature">
+                Nature
+            </button>
+
+            <button type="button" class="category-button" data-category="Travel">
+                Travel
+            </button>
+
+            <button type="button" class="category-button" data-category="Animals">
+                Animals
+            </button>
+
+            <button type="button" class="category-button" data-category="Architecture">
+                Architecture
+            </button>
+        </nav>
+
+        <!-- Two-page photo book -->
+        <div class="gallery-book-wrap">
+
+            <div class="gallery-book" id="galleryBook">
+
+                <article class="photo-page left-page" id="leftPage">
+                    <div class="page-number">01</div>
+
+                    <div class="photo-frame">
+                        <img id="leftImage" src="" alt="Photo on the left page">
+                    </div>
+
+                    <div class="photo-info">
+                        <p id="leftCategory" class="photo-category"></p>
+                        <h2 id="leftTitle"></h2>
+                        <p id="leftDescription" class="photo-description"></p>
+                    </div>
+                </article>
+
+                <div class="book-spine"></div>
+
+                <article class="photo-page right-page" id="rightPage">
+                    <div class="page-number">02</div>
+
+                    <div class="photo-frame">
+                        <img id="rightImage" src="" alt="Photo on the right page">
+                    </div>
+
+                    <div class="photo-info">
+                        <p id="rightCategory" class="photo-category"></p>
+                        <h2 id="rightTitle"></h2>
+                        <p id="rightDescription" class="photo-description"></p>
+                    </div>
+                </article>
+
+            </div>
+
+        </div>
+
+        <div class="gallery-controls">
+            <button type="button" id="prevBtn" class="navigation-button">
+                <span>←</span> Previous
+            </button>
+
+            <p id="pageCounter" class="page-counter">01 — 08</p>
+
+            <button type="button" id="nextBtn" class="navigation-button">
+                Next <span>→</span>
+            </button>
+        </div>
+
+        <p class="gallery-note">
+            CLICK ANY PHOTOGRAPH TO VIEW IT IN FULL SIZE
+        </p>
+
+        <footer class="gallery-footer">
+            FLIPFOLIO · EVERY PICTURE TELLS A STORY
+        </footer>
+
+    </section>
+
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" hidden>
+        <button type="button" id="lightboxClose" class="lightbox-close"
+                aria-label="Close photo viewer">×</button>
+
+        <button type="button" id="lightboxPrev" class="lightbox-arrow"
+                aria-label="Previous photo">‹</button>
+
+        <div class="lightbox-content">
+            <img id="lightboxImage" src="" alt="Expanded photograph">
+            <h2 id="lightboxTitle"></h2>
+            <p id="lightboxDescription"></p>
+        </div>
+
+        <button type="button" id="lightboxNext" class="lightbox-arrow"
+                aria-label="Next photo">›</button>
+    </div>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
